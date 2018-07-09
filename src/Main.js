@@ -7,8 +7,8 @@ class Main extends Component {
         return(
             <div className="Main" style={styles}>
                 Main
-                <SideBar/>
-                <Chat/>
+                <SideBar user={this.props.user}/>
+                <Chat user={this.props.user}/>
             </div>
         )
     }
