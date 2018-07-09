@@ -4,12 +4,21 @@ import MessageList from './MessageList'
 import MessageForm from './MessageForm'
 
 class Chat extends Component {
+    constructor(){
+        super()
+        this.state={
+            messages : [
+                { id: 1, userName: 'hayes122', body: 'Message1' },
+                { id: 2, userName: 'CJH', body: 'Message2' },
+            ],
+        }
+    }
     render() {
         return(
             <div className="Chat">
                 <ChatHeader/>
-                <MessageList/>
-                <MessageForm />
+                <MessageList messages={this.state.messages}/>
+                <MessageForm/>
             </div>
         )
     }
