@@ -12,8 +12,19 @@ class MessageForm extends Component{
     }
     render(){
         return(
-            <form className="MessageForm" onSubmit={this.handleSubmit}>
-                <input type="text" name="body" placeholder="Type Message Here..." autoFocus required value={this.state.body} onChange={this.handleChange}/>
+            <form 
+             className="MessageForm" 
+             onSubmit={this.handleSubmit}
+            >
+                <input 
+                 type="text" 
+                 name="body" 
+                 placeholder="Type Message Here..." 
+                 autoFocus 
+                 required 
+                 value={this.state.body} 
+                 onChange={this.handleChange}
+                />
                 <button type="submit">
                     Send
                 </button>
