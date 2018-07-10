@@ -8,32 +8,23 @@ class MessageForm extends Component{
         this.setState({body:''})
     }
     handleChange=(ev)=>{
-        this.setState({body:ev.target.value})
+        this.setState({body: ev.target.value})
     }
     render(){
         return(
-            /*<form 
-             className="MessageForm" 
-             onSubmit={this.handleSubmit}
-            >
-                <input 
-                 type="text" 
-                 name="body" 
-                 placeholder="Type Message Here..." 
-                 autoFocus 
-                 required 
-                 value={this.state.body} 
-                 onChange={this.handleChange}
-                />
-                <button type="submit">
-                    Send
-                </button>
-            </form>*/
-        <form class="MessageForm" style={styles.MessageForm}>
+        <form className="MessageForm" style={styles.MessageForm} onSubmit={this.handleSubmit}>
             <div class="chatIcon" style={styles.chatIcon}>
                 <i class="fas fa-comment-alt"></i>
             </div>
-            <input type="text" placeholder="Type a message..." style={styles.input}/>
+            <input
+                name="body" 
+                required 
+                autoFocus 
+                value={this.state.body} 
+                onChange={this.handleChange} 
+                type="text" 
+                placeholder="Type a message..." 
+                style={styles.input}/>
             <button type="submit" style={styles.button}>
                 <i class="far fa-paper-plane" title="Send"></i>
             </button>
