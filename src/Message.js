@@ -6,7 +6,7 @@ const Message = ({message}) => {
     return(
         <div className="Message" style={styles.Message}>
             <Avatar user={message.user}/>
-            <div className="details">
+            <div className="details" style={styles.Details}>
                 <Metadata message={message}/>
                 <div className="body">
                     {message.body}
