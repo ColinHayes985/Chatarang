@@ -1,7 +1,7 @@
 import React from 'react';
 import Message from './Message';
 
-const MessageList = (props) => {
+const MessageList = ({messages}) => {
     
     return(
         <div className="MessageList" style={styles.MessageList}>
@@ -11,7 +11,7 @@ const MessageList = (props) => {
                 </h3>
                 <p>This is the very beginning of the #general room.</p> 
             </div>       
-            {props.messages.map(msg=>(<Message message={msg} key={msg.id}/>))}
+            {messages.map(msg=>(<Message message={msg} key={msg.id}/>))}
         </div>
     )
 }

@@ -1,9 +1,17 @@
 import React from 'react';
+import Avatar from './Avatar'
+import Metadata from './Metadata'
 
-const Message = (props) => {
+const Message = ({message}) => {
     return(
         <div className="Message" style={styles.Message}>
-            {props.message.user.displayName}:{props.message.body}
+            <Avatar user={message.user}/>
+            <div className="details">
+                <Metadata message={message}/>
+                <div className="body">
+                    {message.body}
+                </div>
+            </div>
         </div>
     )
 }
