@@ -12,16 +12,20 @@ class Chat extends Component {
         }
     }
 
-componentDidMount(){
-    base.syncState(
-        'messages/general',
-        {
-            context: this,
-            state: 'messages',
-            asArray: true,
-        }
-    )
-}
+    componentDidMount(){
+        this.messagesRef=base.syncState(
+            'messages/general',
+            {
+                context: this,
+                state: 'messages',
+                asArray: true,
+            }
+        )
+    }
+
+    componentWillUnmount(){
+        base.removeBinding(this.messagesRef)
+    }
 
     addMessage = (body) => {
         const messages=[...this.state.messages];
