@@ -2,12 +2,12 @@ import React, {Component} from 'react'
 import Avatar from './Avatar'
 import SignOut from './SignOut';
 
-const UserInfo = ({user}) => {    
+const UserInfo = ({user, signOut}) => {    
     return(
         <div className="UserInfo" style={styles.UserInfo}>
             <Avatar user={user}/>
             <div className="user" style={styles.user}>{user.displayName}</div>
-            <SignOut/>
+            <SignOut signOut={signOut}/>
         </div>
         )
 }

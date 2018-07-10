@@ -7,10 +7,18 @@ class SignIn extends Component{
     handleChange=(ev)=>{
         this.setState({email:ev.target.value})
     }
+    handleSubmit=(ev)=>{
+        ev.preventDefault()
+        this.props.handleAuth({
+            uid:`${this.state.email}-ksdfjhu32472398`,
+            displayName: this.state.email,
+            email:this.state.email,
+        })
+    }
     render(){
         return(
             <div className="SignIn">
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <input type="email" name="email" placeholder="yourname@example.com" value={this.state.email} onChange={this.handleChange} autoFocus/>
                     <button type="submit">
                         SignIn
