@@ -13,8 +13,8 @@ class MessageForm extends Component{
     render(){
         return(
         <form className="MessageForm" style={styles.MessageForm} onSubmit={this.handleSubmit}>
-            <div class="chatIcon" style={styles.chatIcon}>
-                <i class="fas fa-comment-alt"></i>
+            <div className="chatIcon" style={styles.chatIcon}>
+                <i className="fas fa-comment-alt"></i>
             </div>
             <input
                 name="body" 
@@ -26,7 +26,7 @@ class MessageForm extends Component{
                 placeholder="Type a message..." 
                 style={styles.input}/>
             <button type="submit" style={styles.button}>
-                <i class="far fa-paper-plane" title="Send"></i>
+                <i className="far fa-paper-plane" title="Send"></i>
             </button>
         </form>
         )
