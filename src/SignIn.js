@@ -1,13 +1,13 @@
 import React, {Component} from 'react'
 import { StyleSheet, css } from 'aphrodite'
-import {auth,google} from './base'
+import {auth,google,github} from './base'
 
 class SignIn extends Component{
     state={
         email:'',
     }
-    authenticate=()=>{
-        auth.signInWithPopup(google)
+    authenticate=(provider)=>{
+        auth.signInWithPopup(provider)
             /*.then(result=>{
                 const {user}=result
                 this.props.handleAuth({
@@ -44,9 +44,16 @@ class SignIn extends Component{
                         <button 
                             type="button" 
                             className={css(styles.button)}
-                            onClick={this.authenticate}
+                            onClick={()=>this.authenticate(google)}
                         >
                             Sign In with Google
+                        </button>
+                        <button 
+                            type="button" 
+                            className={css(styles.button)}
+                            onClick={()=>this.authenticate(github)}
+                        >
+                            Sign In with GitHub
                         </button>
                     </form>
                     <div className="blurb">
