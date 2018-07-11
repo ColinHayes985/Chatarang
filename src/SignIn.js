@@ -8,7 +8,7 @@ class SignIn extends Component{
     }
     authenticate=()=>{
         auth.signInWithPopup(google)
-            .then(result=>{
+            /*.then(result=>{
                 const {user}=result
                 this.props.handleAuth({
                     uid: user.uid,
@@ -17,9 +17,9 @@ class SignIn extends Component{
                     photoUrl: user.photoURL,
                 })
             }
-        )
+        )*/
     }
-    handleChange=(ev)=>{
+    /*handleChange=(ev)=>{
         this.setState({email:ev.target.value})
     }
     handleSubmit=(ev)=>{
@@ -29,7 +29,7 @@ class SignIn extends Component{
             displayName: this.state.email,
             email:this.state.email,
         })
-    }
+    }*/
     render(){
         return(
             <div className={`SignIn ${css(styles.signIn)}`}>
